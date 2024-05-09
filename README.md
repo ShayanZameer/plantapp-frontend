@@ -22,9 +22,8 @@ npm run dev
 ## Front end is running at Local Host:5173
 
 
-## Screen Shots:
 
-<img width="923" alt="Capture1" src="https://github.com/ShayanZameer/plantapp-frontend/assets/120198797/4708d7b3-6760-448f-943e-69e274b1e1c6">
+
 
 
 
