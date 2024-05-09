@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    transition: 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  :root {
+    --PrimaryColor: hsl(94, 59%, 35%);
+    --HoverColor: #bdf094;
+    --PaleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+  
+    /* fonts  */
+    --biggestFontsize: 2.5rem;
+    --h1Fontsize: 1.5rem;
+    --h2Fontsize: 1.25rem;
+    --h3Fontsize: 1rem;
+    --normalFontsize: 0.938rem;
+    --smallFontsize: 0.813rem;
+    --smallestFontsize: 0.75rem;
+  }
+.mainContent{
+    width: 82%;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;
+    // background: var(--whiteColor);
+    
+
+
+    .bottom{
+        align-items: flex-start;
+        gap: 2rem;
+        margin-top: 2rem;
+        
+        
+
+.userbody{
+    background: var(--whiteColor);
+    box-shadow: 1px 0px 4px var(--greyText);
+    width: 100%;
+
+
+
+    
+    
+
+
+        .usertop{
+            padding: 10px;
+            flex-direction: row;
+            display: flex;
+            align-items: center;
+            
+
+
+
+            .userheading{
+                font-size: var(--h1Fontsize);
+                font-family: monospace;
+            }
+            
+
+            
+        }
+
+
+
+        .users{
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 10px;
+            
+
+
+            .userid{
+                width: 250px;
+                padding: 10px 0px 0px 5px;
+                margin: 10px 10px 0px 10px;
+                font-weight: 600;
+                color: var(--textColor);
+                // background-color: blue;
+            }
+            .username{
+                width: 200px;
+                padding: 10px 0px 0px 5px;
+                margin: 10px 10px 0px 10px;
+                font-weight: 600;
+                color: var(--textColor);
+                // background-color: black;
+            }
+            .useremail{
+                width: 240px;
+                padding: 10px 0px 0px 5px;
+                margin: 10px 10px 0px 10px;
+                font-weight: 600;
+                color: var(--textColor);
+                // background-color: red;
+            }
+            .userrole{
+                width: 100px;
+                padding: 10px 0px 0px 10px;
+                margin: 10px 10px 0px 15px;
+                font-weight: 600;
+                color: var(--textColor);
+                // background-color: aqua;
+            }
+            .useraction{
+                width: 100px;
+                padding: 10px 0px 0px 10px;
+                margin: 10px 10px 0px 20px;
+                font-weight: 600;
+                color: var(--textColor);
+                // background-color: green;
+            }
+
+        }
+    }
+    .userdescription{
+        display: flex;
+        flex-direction: row;
+
+
+        .useriddescription{
+            width: 250px;
+            height: 58px;
+            padding: 10px 0px 0px 0px;
+            margin: 1px 10px 0px 8px;
+            font-size: var(--normalFontsize);
+
+
+            .useriddescription{
+                width: 240px;
+                height: 75px;
+            }
+            
+        }
+        .usernamedescription{
+            width: 200px;
+            height: 58px;
+            padding: 10px 0px 0px 0px;
+            margin: 1px 10px 0px 8px;
+            font-size: var(--normalFontsize);
+
+
+            .usernamedescription{
+                width: 200px;
+                height: 75px;
+            }
+            
+        }
+        .useremaildescription{
+            width: 240px;
+            height: 58px;
+            padding: 10px 0px 0px 0px;
+            margin: 1px 10px 0px 9px;
+            font-size: var(--normalFontsize);
+
+            .useremaildescription{
+                max-width: 210px;
+                height: 75px;
+            }
+            
+        }
+        .userroledescription{
+            width: 100px;
+            height: 58px;
+            padding: 10px 0px 0px 0px;
+            margin: 1px 10px 0px 16px;
+            font-size: var(--normalFontsize);
+            display: flex;
+            flex-direction: row;
+
+
+            .userroleicon{
+                // font-size: var(--normalFontsize);
+                margin: 12px 20px 0px -40px;
+            }
+            
+        }
+        .useractiondescription{
+            width: 100px;
+            height: 58px;
+            padding: 18px 0px 0px 0px;
+            margin: 1px 10px 0px 14px;
+
+            display: flex;
+            flex-direction: row;
+            font-size: var(--normalFontsize);
+
+            .actiondescription{
+            
+            
+            width: 80px;
+            text-align: center;
+            color: red;
+            .userdeleteicon{
+            font-size: 22px;
+            }
+            
+            }
+            
+        }
+        
+    }
+    .line{
+       
+        height: 1px;
+        background: var(--greyText);
+        margin: 0px 8px 5px 8px;
+        border-radius: 5px;
+      }
+    }
+}
+.userpagination{
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 7px;
+    
+}

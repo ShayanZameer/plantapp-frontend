@@ -1,0 +1,208 @@
+:root {
+    --PrimaryColor: hsl(94, 59%, 35%);
+    --HoverColor: #bdf094;
+    --PaleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+  
+    /* fonts  */
+    --biggestFontsize: 2.5rem;
+    --h1Fontsize: 1.5rem;
+    --h2Fontsize: 1.25rem;
+    --h3Fontsize: 1rem;
+    --normalFontsize: 0.938rem;
+    --smallFontsize: 0.813rem;
+    --smallestFontsize: 0.75rem;
+  }
+  .sidebar{
+    background: var(--whiteColor);
+    box-shadow: 1px 0px 4px var(--greyText);
+  width: 18%;
+    // height: 100%;
+    overflow: auto;
+    gap: 2.5rem;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+  
+  .logoDiv{
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 0;
+
+
+    img{
+        max-width: 25px;
+        margin-right: .5rem;
+        background: var(--inputColor);
+        border-radius: 2px;
+        padding: .2rem;
+    }
+
+    h2{
+        font-size: var(--h2Fontsize);
+        color: var(--PrimaryColor);
+    }
+  }
+  .menuDiv, .settingsDiv{
+    .divTitle{
+        font-size: var(--h3Fontsize);
+        color: var(--blackColor);
+        padding: 0 1.5rem 1rem;
+    }
+    .menuLists{
+        .listItem{
+            padding: 0 1.5rem;
+            position: relative
+            ;
+            width: 100%;
+
+            &::before{
+                content: "";
+                position: absolute;
+                height: 0%;
+                left: 0;
+                width: 5px;
+                bottom: 0;
+                background: var(--PrimaryColor);
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .menuLink{
+                color: var(--textColor);
+                font-weight: 500;
+                transition: 0;
+
+                .icon{
+                    margin-right: .5rem;
+                }
+            }
+            &:hover .menuLink{
+                color: var(--PrimaryColor);
+                transition: 0;
+            }
+
+            &:hover::before{
+                height: 100%;
+                transform: .3s ease;
+            }
+        }
+        
+    }
+    
+    
+  }
+  .sidebarCard{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+.icon{
+    position: absolute;
+    background: var(--HoverColor);
+    border: 10px solid var(--whiteColor);
+    font-size: 3rem;
+    border-radius: 50%;
+    top: -7px;
+    right: 50%;
+    transform: translate(50%);
+    z-index: 100;
+}
+.cardContent{
+    position: relative;
+    padding: 1rem;
+    background: var(--HoverColor);
+    overflow: hidden;
+    border-radius: 10px;
+    
+
+    h3{
+        font-size: var(--h3Fontsize);
+        margin-top: .2rem;
+        padding: .5rem 0;
+        font-weight: 800;
+        color: var(--blackColor);
+    }
+    p{
+        padding-bottom: 1rem;
+        font-size: var(--normalFontsize);
+        color: var(--textColor);
+        font-weight: 500;
+    }
+    .btn{
+        position: relative;
+        color: var(--textColor);
+        z-index: 1000;
+    }
+
+    .circle1, .circle2{
+        position: absolute;
+        opacity: .7;
+        background: var(--PaleGreen);
+        border-radius: 50%;
+    }
+    .circle1{
+        height: 100px;
+        width: 100px;
+        top: -50px;
+        left: -50px;
+    }
+    .circle2{
+        height: 150px;
+        width: 150px;
+        bottom: -80px;
+        right: -70px;
+        z-index: 1;
+    }
+}
+  }
+
+  .logoutdiv{
+    background: var(--PrimaryColor);
+    display: flex;
+    flex-direction: row;
+    padding: 6px;
+    border-radius: 5px;
+    width: 180px;
+    align-items: center;
+    // justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    .logoutbutton{
+        color: var(--whiteColor);
+        font-weight: 600;
+        font-size: var(--normalFontsize);
+
+    }
+    .logouticon{
+        margin-right: 10px;
+        color: var(--whiteColor);
+        margin-left: 35px;
+        
+    }
+    &:hover .logouticon{
+        // background: #8fb089;
+        color: var(--blackColor);
+        // transition: .8s ease;
+        // animation: .5s ease-in-out;
+        // transition-delay: .1s;
+    }
+    &:hover{
+        background: #8fb089;
+        color: var(--blackColor);
+        
+        transition-delay: .2s;
+    }
+    &:hover .logoutbutton{
+        // background: #8fb089;
+        color: var(--blackColor);
+        transition-delay: .2s;
+        
+    }
+  }
+}
