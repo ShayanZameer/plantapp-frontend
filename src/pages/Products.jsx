@@ -14,7 +14,7 @@ import AddProduct from "../components/AddProduct";
 
 import { useState,useEffect } from "react";
 
-import { BASE_URL } from '/backend/config.js';
+import { BASE_URL } from "../config.jsx";
 
 
 

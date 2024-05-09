@@ -18,7 +18,10 @@ import { useState,useEffect } from "react";
 
 // import {BASE_URL} from "../../backend/config";
 
-import { BASE_URL } from '/backend/config.js';
+// import { BASE_URL } from '/backend/config.js';
+
+import { BASE_URL } from "../config.jsx";
+
 
 
 // const API_ENDPOINT = `${BASE_URL}/api/auth/users`;

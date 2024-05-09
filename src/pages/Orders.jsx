@@ -13,7 +13,10 @@ import { useState,useEffect } from "react";
 
 // import {BASE_URL} from "../../backend/config";
 
-import { BASE_URL } from '/backend/config.js';
+// import { BASE_URL } from '/backend/config.js';
+
+import { BASE_URL } from "../config.jsx";
+
 
 
 const Orders = () => {
