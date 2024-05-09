@@ -16,7 +16,6 @@ npm install
 
 
 ## Starting Script
-```bash
 npm run dev
 
 
