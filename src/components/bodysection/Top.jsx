@@ -15,8 +15,8 @@ export const Top = () => {
           <p>Hi Fahad, Welcome Back!</p>
         </div>
         <div className="searchBar flex">
-          <input type="text" placeholder="Search here" />
-          <IoIosSearch className="icon" />
+          <input style={{padding:10, marginTop:10}} type="text" placeholder="Search here" />
+          <IoIosSearch style={{ marginRight:15, marginTop:-3}} className="icon" />
         </div>
         <div className="adminDiv flex">
           <IoMdNotificationsOutline className="icon" />

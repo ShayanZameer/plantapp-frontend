@@ -8,7 +8,6 @@ import { Top } from "../components/bodysection/Top";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import AddProduct from "../components/AddProduct";
-// import "./users.scss";
 
 
 
