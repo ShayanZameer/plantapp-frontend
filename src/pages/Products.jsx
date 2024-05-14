@@ -9,6 +9,8 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import AddProduct from "../components/AddProduct";
 
+import Editproduct from "../components/Editproduct.jsx";
+
 
 
 import { useState,useEffect } from "react";
@@ -20,11 +22,14 @@ import { BASE_URL } from "../config.jsx";
 const Products = () => {
 
 
+
+
   const [productsData, setproductsData] = useState([]);
 
   const [showAddProduct, setShowAddProduct] = useState(false); // State to track visibility of AddProduct component
 
-
+  const [showEditProduct, setShowEditProduct] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState(null);
 
   const handleDeleteProduct = (userId) => {
 
@@ -57,6 +62,27 @@ const Products = () => {
   const showAddProductComponent = () => {
     setShowAddProduct(prevState => !prevState);
   };
+
+
+  const handleEditProduct = (product) => {
+    setCurrentProduct(product);
+    setShowEditProduct(true);
+  };
+
+  const handleSaveChanges = (id, updatedData) => {
+    fetch(`http://localhost:5000/api/Product/editProduct/${id}`, {
+      method: 'PUT',
+      body: updatedData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Product updated', data);
+      setShowEditProduct(false);
+      // Refresh the products list or update the state directly
+    })
+    .catch(error => console.error('Error updating product:', error));
+  };
+
 
 
   
@@ -103,7 +129,7 @@ const Products = () => {
         </p>
 
         <p className="actiondescription">
-        <CiEdit  style={{color:"black",marginLeft:-20}} className="icon userdeleteicon"/>
+        <CiEdit onClick={() => handleEditProduct(item)}  style={{color:"black",marginLeft:-20}} className="icon userdeleteicon"/>
         </p>
       </div>
      
@@ -162,6 +188,14 @@ const Products = () => {
             <Stack className="productpagination" spacing={2}>
       <Pagination count={10} variant="outlined" />
     </Stack>
+
+    {showEditProduct && (
+        <Editproduct
+          product={currentProduct}
+          onClose={() => setShowEditProduct(false)}
+          onSave={handleSaveChanges}
+        />
+      )}
           </div>
         </div>
       </div>

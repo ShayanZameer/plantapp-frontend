@@ -10,6 +10,9 @@ import { SlBag } from "react-icons/sl";
 import { VscGraphLine } from "react-icons/vsc";
 import BarChart from "../components/Dashboardcharts/BarChart";
 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+
+
 const Dashboard = () => {
 
 
@@ -22,7 +25,12 @@ const Dashboard = () => {
 
   const [recentOrders, setRecentOrders] = useState([]);
 
+  const navigate = useNavigate(); // Hook for navigation
 
+
+  const handleSeeAllClick = () => {
+    navigate('/admin/orders'); // Navigate to the orders page
+  };
 
 
   useEffect(() => {
@@ -214,7 +222,7 @@ const Dashboard = () => {
               <FaArrowRight className="icon seeall" /> */}
               
 
-              <div className="seealldiv">
+              <div onClick={handleSeeAllClick} className="seealldiv">
               <h4 className="orderseeall">See all</h4>
               <FaArrowRight className="icon seeall" />
               </div>
