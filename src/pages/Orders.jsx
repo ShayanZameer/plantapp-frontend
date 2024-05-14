@@ -8,6 +8,8 @@ import { Top } from "../components/bodysection/Top";
 
 import { useState,useEffect } from "react";
 
+import Popup from "../components/Popup.jsx";
+
 
 // const BASE_URL = require('./config');
 
@@ -20,17 +22,15 @@ import { BASE_URL } from "../config.jsx";
 
 
 const Orders = () => {
-
-
-  
-
-
   const [orders, setOrders] = useState([]);
+  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+  const [selectedOrder, setSelectedOrder] = useState(null); // State to hold selected order data
 
-
-
-
-
+   // Function to handle "Manage" button click
+   const handleManageClick = (order) => {
+    setSelectedOrder(order);
+    setShowPopup(true);
+  };
 
   useEffect(() => {
     // Fetch data from your API endpoint
@@ -42,45 +42,8 @@ const Orders = () => {
 
 
 
-  console.log("orders are", orders );
+  // console.log("orders are", orders );
 
-
-
-
-
-
-
-
-  
-
-
-  // const Productdetails = ({item}) =>{
-  //   return(
-  //     <>
-  //     <div className="productdescription">
-  //     <div className="productphotodescription">
-  //     <p>{item.date}</p>
-  //           </div>
-  //     <div className="productnamedescription">
-  //       <p>{item.name}</p>
-  //     </div>
-  //     <div className="productpricedescription">
-  //       <p>${item.price}</p>
-  //     </div>
-  //     <div className="productstockdescription">
-  //       <p>{item.stock}</p>
-  //     </div>
-  //     <div className="productactiondescription">
-  //       <p className="actiondescription">Manage</p>
-  //     </div>
-     
-  //     </div>
-  //     <div className="line"></div>
-      
-  //     </>
-      
-  //   )
-  // }
   const Productdetails = ({ item }) => {
     return (
       <>
@@ -105,7 +68,7 @@ const Orders = () => {
           </div>
           
           <div className="productactiondescription">
-            <p className="actiondescription">Manage</p>
+            <p onClick={() => handleManageClick(item)} className="actiondescription">Manage</p>
           </div>
         </div>
         <div className="line"></div>
@@ -166,7 +129,16 @@ const Orders = () => {
           </div>
         </div>
       </div>
+      {showPopup && (
+  <Popup 
+    showPopup={showPopup} 
+    setShowPopup={setShowPopup} 
+    selectedOrder={selectedOrder} 
+    setSelectedOrder={setSelectedOrder} 
+  />
+)}
     </div>
+
   );
 };
 
