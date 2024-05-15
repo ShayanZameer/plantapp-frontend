@@ -95,6 +95,9 @@ const Products = () => {
   }, []);
 
 
+  console.log("data fetched ",productsData );
+
+
 
 
 
@@ -119,13 +122,11 @@ const Products = () => {
       <div className="productstockdescription">
         <p>{item.stock}</p>
       </div>
-      {/* <div className="productactiondescription">
-        <p className="actiondescription">Manage</p>
-      </div> */}
+      
 
 <div className="productactiondescription">
         <p className="actiondescription">
-        <MdDelete onClick={() => handleDeleteProduct(item._id)} style={{color:"red"}}  className="icon userdeleteicon" />
+        <MdDelete onClick={() => handleDeleteProduct(item._id)} style={{color:"red", backgroundColor:"none"}}  className="icon userdeleteicon" />
         </p>
 
         <p className="actiondescription">

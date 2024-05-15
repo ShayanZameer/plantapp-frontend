@@ -1,11 +1,24 @@
 import React from "react";
 
+import { useState } from "react";
+
 import "./top.scss";
 import { IoIosSearch } from "react-icons/io";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import profile from "../../assets/profile.jpeg";
 
+
 export const Top = () => {
+
+
+
+  const [showProfileOptions, setShowProfileOptions] = useState(false);
+
+  // const toggleProfileOptions = () => {
+  //   setShowProfileOptions(!showProfileOptions);
+  // };
+
+  
   return (
     <div className="topSection">
       <div className="headerSection flex">

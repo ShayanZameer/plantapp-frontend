@@ -8,6 +8,8 @@ const AddProduct = ({ onClose }) => {
   const [stock, setStock] = useState('');
   const [image, setImage] = useState(null);
   const [imageType, setImageType] = useState("");
+  const [weight, setWeight] = useState("");
+
 
 
   const handleNameChange = (e) => {
@@ -17,6 +19,9 @@ const AddProduct = ({ onClose }) => {
 
   const handleImageType = (e) => {
     setImageType(e.target.value);
+  };
+  const handleWeight = (e) => {
+    setWeight(e.target.value);
   };
 
   const handlePriceChange = (e) => {
@@ -39,9 +44,10 @@ const handleSubmit = () => {
     formData.append('name', name);
     formData.append('price', price);
     formData.append('stock', stock);
+    formData.append("weight",weight);
+    formData.append("imageType",imageType);
     formData.append('image', image);
 
-    formData.append("imageType",imageType);
   
     // Make the API request to add a new product
     fetch('http://localhost:5000/api/Product/addProduct', {
@@ -56,6 +62,8 @@ const handleSubmit = () => {
     })
     .then(data => {
       console.log('Product added successfully:', data);
+
+      alert("Product Added Successfully");
       // Close the modal
       onClose();
     })
@@ -112,6 +120,17 @@ const handleSubmit = () => {
               id="imageType"
               value={imageType}
               onChange={handleImageType}
+            />
+          </div>
+
+
+          <div className="input-group">
+            <label htmlFor="weight">Weight:</label>
+            <input
+              type="text"
+              id="Weight"
+              value={weight}
+              onChange={handleWeight}
             />
           </div>
 

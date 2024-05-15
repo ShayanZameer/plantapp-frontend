@@ -42,7 +42,6 @@ const Orders = () => {
 
 
 
-  // console.log("orders are", orders );
 
   const Productdetails = ({ item }) => {
     return (

@@ -24,7 +24,7 @@ const BarChart = () => {
         }
       },
       legend: {
-        data: ['Evaporation', 'Precipitation', 'Temperature']
+        data: ['Products', 'Users', 'Orders']
       },
       xAxis: [
         {
@@ -41,7 +41,7 @@ const BarChart = () => {
       yAxis: [
         {
           type: 'value',
-          name: 'Evaporation',
+          name: 'Products',
           position: 'right',
           alignTicks: true,
           axisLine: {
@@ -50,13 +50,11 @@ const BarChart = () => {
               color: colors[0]
             }
           },
-          axisLabel: {
-            formatter: '{value} ml'
-          }
+          
         },
         {
           type: 'value',
-          name: 'Precipitation',
+          name: 'Users',
           position: 'right',
           alignTicks: true,
           offset: 80,
@@ -66,13 +64,11 @@ const BarChart = () => {
               color: colors[1]
             }
           },
-          axisLabel: {
-            formatter: '{value} ml'
-          }
+          
         },
         {
           type: 'value',
-          name: '温度',
+          name: 'Orders',
           position: 'left',
           alignTicks: true,
           axisLine: {
@@ -81,22 +77,19 @@ const BarChart = () => {
               color: colors[2]
             }
           },
-          axisLabel: {
-            formatter: '{value} °C'
-          }
+          
         }
       ],
       series: [
         {
-          name: 'Evaporation',
+          name: 'Products',
           type: 'bar',
           data: [
-            2.0, 4.9, 7.0, 23.2, 25.6, 76.7,
-            135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+            0,10,20,30,40,50
           ]
         },
         {
-          name: 'Precipitation',
+          name: 'Users',
           type: 'bar',
           yAxisIndex: 1,
           data: [
@@ -105,12 +98,11 @@ const BarChart = () => {
           ]
         },
         {
-          name: 'Temperature',
+          name: 'Orders',
           type: 'line',
           yAxisIndex: 2,
           data: [
-            2.0, 2.2, 3.3, 4.5, 6.3, 10.2,
-            20.3, 23.4, 23.0, 16.5, 12.0, 6.2
+           0,10,20,30,40,50
           ]
         }
       ]

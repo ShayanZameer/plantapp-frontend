@@ -1,85 +1,5 @@
 
 
-
-// import React, { useState, useEffect } from 'react';
-
-// const EditProduct = ({ product, onClose, onSave }) => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     price: '',
-//     stock: '',
-//     image: null
-//   });
-
-//   useEffect(() => {
-//     if (product) {
-//       setFormData({
-//         name: product.name,
-//         price: product.price,
-//         stock: product.stock,
-//         image: product.image
-//       });
-//     }
-//   }, [product]);
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData(prevState => ({ ...prevState, [name]: value }));
-//   };
-
-//   const handleImageChange = (e) => {
-//     setFormData({ ...formData, image: e.target.files[0] });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const formDataToSend = new FormData();
-//     formDataToSend.append('name', formData.name);
-//     formDataToSend.append('price', formData.price);
-//     formDataToSend.append('stock', formData.stock);
-//     if (formData.image instanceof File) {
-//       formDataToSend.append('image', formData.image);
-//     }
-//     onSave(product._id, formDataToSend);
-//   };
-
-//   return (
-//     <div className="edit-product-overlay">
-//       <div className="edit-product-modal">
-//         <div className="modal-header">
-//           <h2>Edit Product</h2>
-//           <button onClick={onClose} className="close-button">✕</button>
-//         </div>
-//         <form onSubmit={handleSubmit} className="modal-form">
-//           <div className="form-group">
-//             <label>Name</label>
-//             <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
-//           </div>
-//           <div className="form-group">
-//             <label>Price</label>
-//             <input type="text" name="price" value={formData.price} onChange={handleInputChange} />
-//           </div>
-//           <div className="form-group">
-//             <label>Stock</label>
-//             <input type="text" name="stock" value={formData.stock} onChange={handleInputChange} />
-//           </div>
-//           <div className="form-group">
-//             <label>Image</label>
-//             <input type="file" onChange={handleImageChange} />
-//             {formData.image && typeof formData.image === 'string' && <img src={formData.image} alt="Product" height="50" />}
-//           </div>
-//           <div className="form-actions">
-//             <button type="submit" className="save-btn">Save</button>
-//             <button type="button" onClick={onClose} className="cancel-btn">Cancel</button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default EditProduct;
-
 import React, { useState, useEffect } from 'react';
 
 const EditProduct = ({ product, onClose, onSave }) => {
@@ -124,6 +44,8 @@ const EditProduct = ({ product, onClose, onSave }) => {
       formDataToSend.append('image', formData.image);
     }
     onSave(product._id, formDataToSend);
+
+    alert("Product edited successfully");
   };
 
   return (
@@ -185,7 +107,7 @@ const EditProduct = ({ product, onClose, onSave }) => {
               onChange={handleImageChange}
             />
             {formData.image && typeof formData.image === 'string' && (
-              <img src={formData.image} alt="Current Product" height="50" />
+              <img style={{height: 80,width: 100 }} src={formData.image} alt="Current Product"  />
             )}
           </div>
           <div className="modal-footer">
